@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Dien</title>
+</head>
+<body>
+<h2>Từ Điển Anh - Việt</h2>
+<input id="key" type="text" value="">
+<button onclick="find()">Dịch</button><br><br>
+Kết quả:
+<p id="result"></p>
+</body>
+</html>
+<script>
+    let word = document.getElementById('key');
+    let dictionary = ['bear','dog', 'elephant', 'fox', 'cat'];
+    let meaning = ['gấu', 'chó', 'voi', 'cáo', 'mèo' ];
+
+
+         function find(){
+            //   console.log(ktr(word.value))
+             if (ktr(word.value )){
+                 document.getElementById('result').innerHTML=
+                 meaning[dictionary.indexOf(word.value)];
+             }
+             else {
+                 document.getElementById('result').innerHTML= 'Not found';
+
+             }
+         }
+    function ktr(a){
+        for (let i = 0; i < dictionary.length; i++) {
+            if (a === dictionary[i]) {
+                return true;
+            }
+        }
+        return false
+    }
+</script>
+
+
+
+<!--<script>-->
+<!--    function Find1(){-->
+<!--        let dictionary = ['bear','dog', 'elephant', 'fox', 'cat'];-->
+<!--        let meaning = ['gấu', 'chó', 'voi', 'cáo', 'mèo' ];-->
+<!--        let word = document.getElementById("key").value;-->
+<!--        for (let i = 0; i < dictionary.length; i++) {-->
+<!--            if (word == dictionary[i]) {-->
+<!--                console.log(meaning[i])-->
+<!--               // document.getElementById('result').innerHTML = meaning[i] ;-->
+<!--                break;-->
+<!--            } else if(i===dictionary.length-1){-->
+<!--                // document.getElementById('result').innerHTML = 'ko tìm thấy'-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
